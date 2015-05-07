@@ -1,0 +1,81 @@
+<section data-ng-controller="FoodsCreateController as foodCtrl">
+
+    <div class="modal-header">
+        <h3 class="modal-title">New Food</h3>
+    </div>
+    <div class="modal-body">
+
+        <form name="createFoodForm">
+            <fieldset>
+                <div class="row">
+                    <div class="form-group">
+                        <div data-ng-show="error" class="text-center text-danger">
+                            <div class="alert alert-danger" role="alert">
+                                <strong data-ng-bind="error"></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="foodCtrl.name" id="name" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="price">Price</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="foodCtrl.price" id="price" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="description">Description</label>
+                            <div class="controls">
+                                <textarea class="form-control" rows="10" data-ng-model="foodCtrl.description" id="description" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Image</label>
+                            <div class="controls">
+                                <button>
+                                    Upload Image <input type="file" ng-file-select="onFileSelect($files)">
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-6">-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="control-label" for="description">Description</label>-->
+                            <!--<div class="controls">-->
+                                <!--<input type="text" data-ng-model="foodCtrl.description" id="description" class="form-control" required>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+            </fieldset>
+        </form>
+
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="foodCtrl.create(); okCreate()" ng-disabled="createFoodForm.$invalid">Save and Close</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+
+
+
+</section>

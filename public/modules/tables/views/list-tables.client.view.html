@@ -1,0 +1,37 @@
+<section data-ng-controller="TablesController" data-ng-init="find()">
+    This is the Tables view
+    <p>Testing</p>
+    <button ng-click="newTable()">New Table</button>
+    <div id="container" class="ui-widget-content">
+        <!--           <div resizable style="width: 100px; height:100px; background-color: yellow;" data-ng-repeat="table in tables">
+         -->
+
+
+        <!--  <div resizable on-resize="updateTable(a)" class="ui-widget-content" id="{{table.id}}" style="position: absolute; left: {{table.left}}; top: {{table.top}}; width:{{table.width}} height:{{table.height}} background-color: blue;" data-ng-repeat="table in tables"></div>   -->
+
+        <md-card resizable on-resize="updateTable(a)" class="ui-widget-content" id="{{table.id}}" style="position: absolute; left: {{table.left}}; top: {{table.top}}; width:{{table.width}}; height:{{table.height}}"; data-ng-repeat="table in tables">
+            <md-button ng-click="remove(table)" class="md-fab md-mini md-primary settings" aria-label="Eat cake">
+                <!--                 <md-icon md-svg-src="delete"></md-icon> -->
+                <span class="glyphicon glyphicon-trash"></span>
+            </md-button>
+            <!-- <span data-ng-bind="server.name"></span> -->
+            <span>{{table.server}}</span>
+            <!-- <div instaform on-submit="onSubmit(u)"></div> -->
+            <form novalidate data-ng-hide="table.server" class="simple-form">
+                Name: <input type="text" ng-model="server.name" /><br />
+                <input type="button" ng-click="reset()" value="Reset" />
+                <!-- <input type="submit" ng-click="update(server)" value="Save" /> -->
+                <input type="submit" ng-click="handleThisElement($event, server)" id="test" value="Save" />
+            </form>
+
+
+        </md-card>
+
+        <!--             <div style="width: 100px; height: 100px; background-color: blue; position: absolute; left: 496px; top: 50px;">{{table}}</div>
+
+         -->
+        <!--  <md-card resizable on-resize="updateTable(a)" class="ui-widget-content" style="position: absolute; left: 496px; top: 50px; "><p>{{table}}</p><md-button trash class="md-fab md-mini settings" aria-label="Eat cake"><md-icon md-svg-src="#"></md-icon></md-button><div instaform></div></md-card> -->
+        <!--           </div>
+         -->      </div>
+    <button ng-click="saveChanges()">Save Changes</button>
+</section>

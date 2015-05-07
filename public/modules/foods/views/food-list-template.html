@@ -1,0 +1,37 @@
+    <div class="list-group">
+        <div class="col-md-12 col-sm-4" data-ng-repeat="food in foodsCtrl.foods | filter:searchText">
+            <a ng-click="foodsCtrl.modalUpdate('lg', food)" class="list-group-item">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h4>{{food.name}}</h4>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h4>Price {{food.price}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6 text-center">
+                        <p>{{food.description}}</p>
+                    </div>
+
+                    <div class="col-md-6 text-center">
+                        <img src="" width="419" height="300"/>
+                    </div>
+
+
+                    <div class="col-md-6 text-center pull-right">
+                        <span class="pull-right">
+                            <button class="btn btn-default btn-sm" ng-click="foodsCtrl.remove(food)">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </button>
+                        </span>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!foods.$resolved || foods.length">
+        No Foods yet, why don't you <a href="/#!/foods/create">create one</a>?
+    </div>

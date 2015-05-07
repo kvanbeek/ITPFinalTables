@@ -1,0 +1,100 @@
+#container {
+    width:  800px;
+    height: 800px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+
+p{
+    color: blue;
+}
+
+.resizable { width: 100; padding: 0.5em; }
+.resizable h3 { text-align: center; margin: 0; }
+
+/*div[resizable] {
+    border: 1px solid Black;
+    width: 50%;
+}*/
+
+.draggable { width: 100; padding: 0.5em; position: relative; left:0; top:0;}
+
+.settings {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+a, a:visited {
+    outline:none;
+    color:#389dc1;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+section, footer, header, aside, nav{
+    display: block;
+}
+
+/*-------------------------
+  The search input
+--------------------------*/
+
+.bar{
+    background-color:#5c9bb7;
+
+    background-image:-webkit-linear-gradient(top, #5c9bb7, #5392ad);
+    background-image:-moz-linear-gradient(top, #5c9bb7, #5392ad);
+    background-image:linear-gradient(top, #5c9bb7, #5392ad);
+
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 2px;
+    width: 580px;
+    padding: 10px;
+    margin: 45px auto 25px;
+    position:relative;
+    text-align:right;
+    line-height: 1;
+}
+
+.bar a{
+    background:#4987a1 center center no-repeat;
+    width:32px;
+    height:32px;
+    display:inline-block;
+    text-decoration:none !important;
+    margin-right:5px;
+    border-radius:2px;
+    cursor:pointer;
+}
+
+.bar a.active{
+    background-color:#c14694;
+}
+
+
+
+.bar input{
+    background:#fff no-repeat 13px 13px;
+
+    border: none;
+    width: 100%;
+    line-height: 19px;
+    padding: 11px 0;
+
+    border-radius: 2px;
+    box-shadow: 0 2px 8px #c4c4c4 inset;
+    text-align: left;
+    font-size: 14px;
+    font-family: inherit;
+    color: #738289;
+    font-weight: bold;
+    outline: none;
+    text-indent: 40px;
+}

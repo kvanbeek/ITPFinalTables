@@ -1,0 +1,69 @@
+<section data-ng-controller="FoodsEditController as foodUpCtrl">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Update: {{food.name}}</h3>
+    </div>
+    <div class="modal-body">
+
+        <form name="updateFoodForm">
+            <fieldset>
+                <div class="row">
+                    <div class="form-group">
+                        <div data-ng-show="error" class="text-center text-danger">
+                            <div class="alert alert-danger" role="alert">
+                                <strong data-ng-bind="error"></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="name">First Name</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="food.name" id="name" class="form-control" placeholder="{{food.name}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="price">Price: </label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="food.price" id="price" class="form-control" placeholder="{{food.price}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="description">Description</label>
+                            <div class="controls">
+                                <textarea class="form-control" rows="8" data-ng-model="foodCtrl.description" id="description" placeholder="{{food.description}}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="urlImage">Image</label>
+                            <div class="controls">
+                                <img src="" width="419" height="174" id="urlImage"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                </div>
+            </fieldset>
+        </form>
+
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="foodUpCtrl.update(food); ok()" ng-disabled="updateFoodForm.$invalid">Update and Close</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+
+
+
+</section>

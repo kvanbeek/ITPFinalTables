@@ -1,0 +1,66 @@
+<section data-ng-controller="CustomersController" data-ng-init="find()">
+    <div class="page-header">
+        <h1 class="text-center">Customers</h1>
+    </div>
+    
+    <div class="alert alert-warning text-center" data-ng-hide="!customers.$resolved || customers.length">
+    	No Customers yet, why don't you <a href="/#!/customers/create">create one</a>?
+
+    </div>
+    
+    <div class="menu_form col-md-10 col-md-offset-1">
+        
+            <div class="row">
+
+                <div class="col-md-6">
+                    <form class="form-inline">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Item Name">
+                          </div>
+                          <div class="form-group pull-right">
+                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Price">
+                          </div>
+                          <br>
+                          <textarea class="form-control" rows="10" style="margin-top: 10px; width: 100%;" placeholder="Description"></textarea>
+                          <button type="submit" class="btn btn-success" style="margin-top: 10px;">Create New</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img height="350p" width="429" style="display: block; margin-left: auto; margin-right: auto">
+                </div>
+            </div>
+    </div>
+
+    <div class="col-md-10 col-md-offset-1"><h3 class="text-center">Menu Items</h3></div>
+    <div class="list-group">
+        <div class="col-md-10 col-md-offset-1" data-ng-repeat="myitem in customers">
+            <a data-ng-href="#!/customers/{{myitem._id}}" class="list-group-item">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>{{myitem.firstName}} {{myitem.industry}}</h4>
+
+
+
+                        <img width="429" height="350" style="display: block; margin-left: auto; margin-right: auto;">
+                        <small class="list-group-item-text text-muted">
+                            <span data-ng-bind="myitem.created | date:'medium'"></span>
+                        </small>
+                        <!--<div class="col-md-4">-->
+                            <!--<h4></h4>-->
+                            <!--<img height="100px" width="150px" style="display: block; margin-left: auto; margin-right: auto;">-->
+                        <!--</div>-->
+                    </div>
+                        <div class="col-md-6">
+                            <h4>Description</h4>
+                            <div class="pull-right">this is the description about the item on the menu blah blah blah. this is the description about the item on the menu blah blah blah. this is the description about the item on the menu blah blah blah. this is the description about the item on the menu blah blah blah. this is the description about the item on the menu blah blah blah. this is the description about the item on the menu blah blah blah</div>
+
+
+                        </div>
+                </div>
+                
+            </a>
+        </div>
+    </div>
+</section>
