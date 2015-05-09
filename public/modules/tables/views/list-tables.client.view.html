@@ -22,7 +22,7 @@
             <span>{{table.server}}</span>
             <!-- <div instaform on-submit="onSubmit(u)"></div> -->
             <form novalidate data-ng-hide="table.server" class="simple-form">
-                Name: <input type="text" ng-model="server.name" /><br />
+                Name: <input type="text" ng-model="server.name" style="width: 100px;"/><br />
                 <input type="button" ng-click="reset()" value="Reset" />
                 <!-- <input type="submit" ng-click="update(server)" value="Save" /> -->
                 <input type="submit" ng-click="handleThisElement($event, server)" id="test" value="Save" />
