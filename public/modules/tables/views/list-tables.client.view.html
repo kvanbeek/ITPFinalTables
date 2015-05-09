@@ -1,7 +1,11 @@
 <section data-ng-controller="TablesController" data-ng-init="find()">
-    This is the Tables view
-    <p>Testing</p>
-    <button ng-click="newTable()">New Table</button>
+    <!--<p style="text-align: center; margin-top: 20px;">Manage Tables</p>-->
+    <div class="page-header">
+        <h1 style="text-align: center;">Manage Tables
+    </div>
+    <md-button class="md-raised" ng-click="newTable()">New Table</md-button>
+    <md-button class="md-raised md-warn pull-right" ng-click="saveChanges()">Save Changes</md-button>
+    <!--<button ng-click="newTable()">New Table</button>-->
     <div id="container" class="ui-widget-content">
         <!--           <div resizable style="width: 100px; height:100px; background-color: yellow;" data-ng-repeat="table in tables">
          -->
@@ -23,8 +27,6 @@
                 <!-- <input type="submit" ng-click="update(server)" value="Save" /> -->
                 <input type="submit" ng-click="handleThisElement($event, server)" id="test" value="Save" />
             </form>
-
-
         </md-card>
 
         <!--             <div style="width: 100px; height: 100px; background-color: blue; position: absolute; left: 496px; top: 50px;">{{table}}</div>
@@ -33,5 +35,5 @@
         <!--  <md-card resizable on-resize="updateTable(a)" class="ui-widget-content" style="position: absolute; left: 496px; top: 50px; "><p>{{table}}</p><md-button trash class="md-fab md-mini settings" aria-label="Eat cake"><md-icon md-svg-src="#"></md-icon></md-button><div instaform></div></md-card> -->
         <!--           </div>
          -->      </div>
-    <button ng-click="saveChanges()">Save Changes</button>
+    <!--<button ng-click="saveChanges()">Save Changes</button>-->
 </section>
